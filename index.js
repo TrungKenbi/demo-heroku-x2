@@ -1,3 +1,4 @@
+var http = require('http');
 var fs = require('fs');
 http.createServer(function (req, res) {
   fs.readFile('index.html', function(err, data) {
@@ -5,4 +6,4 @@ http.createServer(function (req, res) {
     res.write(data);
     return res.end();
   });
-}).listen(process.env.PORT);
+}).listen(process.env.PORT || 3000);
